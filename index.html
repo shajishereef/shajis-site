@@ -522,11 +522,11 @@ hotels.forEach((h,i)=>{
 
 /* ---------- flights & bookings ---------- */
 const flights=[
- {no:"United 953",op:"",date:"Fri Jul 17 → Sat Jul 18",from:"ORD",fromCity:"Chicago O'Hare",to:"MUC",toCity:"Munich",dep:"6:00 PM",arr:"9:40 AM",tDep:"Term 1",tArr:"Term 2",dur:"8h 40m",ac:"Boeing 787",dist:"4,514 mi",cabin:"Premium Economy (R)",eticket:true,emis:"2,940.8 lbs CO\u2082e"},
+ {no:"United 953",op:"",date:"Fri Jul 17 → Sat Jul 18",from:"ORD",fromCity:"Chicago O'Hare",to:"MUC",toCity:"Munich",dep:"6:00 PM",arr:"9:40 AM",tDep:"Term 1",tArr:"Term 2",dur:"8h 40m",ac:"Boeing 787",dist:"4,514 mi",cabin:"",eticket:true,emis:"2,940.8 lbs CO\u2082e"},
  {no:"United 9699",op:"Air Dolomiti",date:"Sat Jul 18",from:"MUC",fromCity:"Munich",to:"VCE",toCity:"Venice Marco Polo",dep:"11:45 AM",arr:"12:45 PM",tDep:"Term 2",tArr:"",dur:"1h 00m",ac:"Embraer 195",dist:"198 mi",cabin:"Economy (Y)",eticket:false,emis:"172.7 lbs CO\u2082e"},
  {no:"Air France 1229",op:"",date:"Thu Jul 23",from:"BLQ",fromCity:"Bologna",to:"CDG",toCity:"Paris CDG",dep:"9:55 AM",arr:"11:45 AM",tDep:"",tArr:"Term 2F",dur:"1h 50m",ac:"Airbus A318",dist:"516 mi",cabin:"Economy (M)",eticket:true,emis:"450.1 lbs CO\u2082e"},
  {no:"Air France 7522",op:"HOP",date:"Thu Jul 23",from:"CDG",fromCity:"Paris CDG",to:"BES",toCity:"Brest",dep:"12:50 PM",arr:"2:00 PM",tDep:"Term 2G",tArr:"",dur:"1h 10m",ac:"Embraer 190",dist:"320 mi",cabin:"Economy (M)",eticket:true,emis:"279.2 lbs CO\u2082e"},
- {no:"United 986",op:"",date:"Sat Jul 25",from:"CDG",fromCity:"Paris CDG",to:"ORD",toCity:"Chicago O'Hare",dep:"11:15 AM",arr:"1:15 PM",tDep:"Term 1",tArr:"Term 5",dur:"9h 00m",ac:"Boeing 787",dist:"4,138 mi",cabin:"Premium Economy (R)",eticket:true,emis:"2,695.8 lbs CO\u2082e"}
+ {no:"United 986",op:"",date:"Sat Jul 25",from:"CDG",fromCity:"Paris CDG",to:"ORD",toCity:"Chicago O'Hare",dep:"11:15 AM",arr:"1:15 PM",tDep:"Term 1",tArr:"Term 5",dur:"9h 00m",ac:"Boeing 787",dist:"4,138 mi",cabin:"",eticket:true,emis:"2,695.8 lbs CO\u2082e"}
 ];
 const fg=document.getElementById('flightgrid');
 flights.forEach(f=>{
@@ -539,7 +539,7 @@ flights.forEach(f=>{
       <div class="end"><div class="code">${f.to}</div><div class="city">${f.toCity}</div><div class="time">${f.arr}</div><div class="term">${f.tArr||'&nbsp;'}</div></div>
     </div>
     <div class="fmeta">
-      <span class="fchip">${f.cabin}</span>
+      ${f.cabin?`<span class="fchip">${f.cabin}</span>`:``}
       <span class="fchip">${f.ac}</span>
       <span class="fchip">${f.dist}</span>
       <span class="fchip">🌱 ${f.emis}</span>
