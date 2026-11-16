@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>This Week in AI: Anthropic IPO Terms, Gemini 4 Hydrogen &amp; More | Nov 16, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f6f8fb; --surface:#ffffff; --surface2:#eef2f8; --border:#dfe5ef;
+  --accent:#00a37c; --accent2:#2563eb; --gold:#b7791f; --red:#d93848;
+  --purple:#7c4ddb; --text:#1c2638; --muted:#5f6d84; --ink:#0d1524;
+  --fh:'Syne',sans-serif; --fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:40px 24px 80px}
+.topbar{height:4px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--gold),var(--red),var(--purple));border-radius:2px}
+.header{display:flex;flex-direction:column;align-items:center;gap:14px;margin:36px 0 20px;text-align:center}
+.header h1{font-family:var(--fh);font-size:clamp(1.5rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.15;margin-top:8px}
+.header .sub{font-size:.9rem;color:var(--muted);font-weight:500;letter-spacing:.04em}
+.header .dateline{display:inline-flex;align-items:center;gap:8px;background:rgba(0,163,124,.08);border:1px solid rgba(0,163,124,.3);border-radius:100px;padding:5px 16px;font-size:.78rem;font-weight:500;color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
+.header .dateline::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0}
+.divider.accent{border-top-color:var(--accent);opacity:.5}
+.intro{font-size:.98rem;color:var(--text);text-align:center;max-width:680px;margin:0 auto 8px}
+.intro strong{color:var(--ink);font-weight:600}
+.section-label{font-family:var(--fh);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;text-align:center}
+strong{color:var(--ink);font-weight:600}
+.hl-green{color:var(--accent);font-weight:600}
+.hl-red{color:var(--red);font-weight:600}
+.hl-gold{color:var(--gold);font-weight:600}
+.hl-blue{color:var(--accent2);font-weight:600}
+.hl-purple{color:var(--purple);font-weight:600}
+
+/* Control panel */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin:24px 0 8px;box-shadow:0 6px 24px rgba(20,40,80,.06);position:sticky;top:10px;z-index:5}
+.panel-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.panel-row:last-child{margin-bottom:0}
+.panel-lbl{font-family:var(--fh);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);min-width:62px}
+.search{flex:1;min-width:180px;display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:6px 14px}
+.search input{border:none;background:transparent;outline:none;font-family:var(--fb);font-size:.9rem;color:var(--text);width:100%}
+.search kbd{font-family:var(--fb);font-size:.65rem;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:0 5px;background:#fff}
+.btn{font-family:var(--fh);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px;border-radius:100px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s}
+.btn:hover{border-color:var(--accent2);color:var(--accent2);transform:translateY(-1px)}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.primary:hover{background:var(--accent2);border-color:var(--accent2);color:#fff}
+.seg{display:inline-flex;background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:3px}
+.seg button{font-family:var(--fh);font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:all .15s}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(20,40,80,.12)}
+.chip{font-family:var(--fh);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s;user-select:none}
+.chip:hover{transform:translateY(-1px)}
+.chip .n{display:inline-block;margin-left:6px;font-size:.6rem;opacity:.7}
+.chip.on.a{color:#fff;background:var(--accent);border-color:var(--accent)}
+.chip.on.b{color:#fff;background:var(--accent2);border-color:var(--accent2)}
+.chip.on.g{color:#fff;background:var(--gold);border-color:var(--gold)}
+.chip.on.r{color:#fff;background:var(--red);border-color:var(--red)}
+.chip.on.p{color:#fff;background:var(--purple);border-color:var(--purple)}
+.chip.on.k{color:#fff;background:var(--ink);border-color:var(--ink)}
+.chip.a{color:var(--accent)} .chip.b{color:var(--accent2)} .chip.g{color:var(--gold)} .chip.r{color:var(--red)} .chip.p{color:var(--purple)}
+.status{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin:14px 2px 0}
+.progress{flex:1;min-width:160px;height:8px;background:var(--surface2);border-radius:100px;overflow:hidden;border:1px solid var(--border)}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .4s ease}
+
+/* Groups and cards */
+h2{font-family:var(--fh);font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:38px 0 14px;display:flex;align-items:center;gap:10px}
+h2 .cnt{font-size:.65rem;color:var(--muted);border:1px solid var(--border);border-radius:100px;padding:1px 9px;letter-spacing:.06em}
+h2::after{content:'';flex:1;height:1px;background:var(--border)}
+.upd-grid{display:flex;flex-direction:column;gap:14px}
+.upd-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;border-left:4px solid var(--accent);transition:transform .15s,box-shadow .2s,opacity .2s;box-shadow:0 2px 10px rgba(20,40,80,.04);animation:popin .35s ease both}
+@keyframes popin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.upd-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(20,40,80,.09)}
+.upd-card.blue{border-left-color:var(--accent2)}
+.upd-card.gold{border-left-color:var(--gold)}
+.upd-card.red{border-left-color:var(--red)}
+.upd-card.purple{border-left-color:var(--purple)}
+.upd-card.read{opacity:.6}
+.upd-card.spot{animation:spot 1.4s ease}
+@keyframes spot{0%{box-shadow:0 0 0 0 rgba(37,99,235,.5)}40%{box-shadow:0 0 0 10px rgba(37,99,235,.15);transform:scale(1.015)}100%{box-shadow:0 2px 10px rgba(20,40,80,.04)}}
+.upd-head{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.upd-num{font-family:var(--fh);font-size:1.1rem;font-weight:800;color:#a3afc2;min-width:28px}
+.upd-title{font-family:var(--fh);font-size:1.02rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.upd-tag{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:100px;border:1px solid var(--border);color:var(--muted);margin-left:auto}
+.upd-card.green .upd-tag{color:var(--accent);border-color:rgba(0,163,124,.35);background:rgba(0,163,124,.06)}
+.upd-card.blue .upd-tag{color:var(--accent2);border-color:rgba(37,99,235,.35);background:rgba(37,99,235,.06)}
+.upd-card.gold .upd-tag{color:var(--gold);border-color:rgba(183,121,31,.35);background:rgba(183,121,31,.07)}
+.upd-card.red .upd-tag{color:var(--red);border-color:rgba(217,56,72,.35);background:rgba(217,56,72,.06)}
+.upd-card.purple .upd-tag{color:var(--purple);border-color:rgba(124,77,219,.35);background:rgba(124,77,219,.06)}
+.upd-card p{font-size:.92rem;color:var(--text);margin:0}
+.maker{color:var(--muted);font-size:.8rem;display:block;margin-bottom:6px;letter-spacing:.02em}
+.card-foot{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.mini{font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:100px;background:var(--surface2);color:var(--muted);border:1px solid var(--border);cursor:pointer}
+.mini:hover{color:var(--accent2);border-color:var(--accent2)}
+.readbtn{margin-left:auto;font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s}
+.readbtn:hover{border-color:var(--accent);color:var(--accent)}
+.upd-card.read .readbtn{background:var(--accent);border-color:var(--accent);color:#fff}
+mark{background:rgba(240,180,41,.35);color:inherit;border-radius:3px;padding:0 2px}
+.empty{text-align:center;padding:40px 20px;background:var(--surface);border:1px dashed var(--border);border-radius:14px;color:var(--muted);margin-top:24px}
+.empty b{display:block;font-family:var(--fh);color:var(--ink);font-size:1.05rem;margin-bottom:6px}
+
+/* Reality check */
+.reality{background:linear-gradient(180deg,rgba(240,180,41,.12),rgba(240,180,41,.05));border:1px solid rgba(183,121,31,.35);border-left:4px solid var(--gold);border-radius:12px;padding:18px 22px;margin:16px 0}
+.reality-head{font-family:var(--fh);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.reality ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.reality li{padding-left:18px;position:relative;font-size:.87rem;color:var(--text)}
+.reality li::before{content:'\2022';position:absolute;left:0;color:var(--gold);top:1px}
+.reality .lbl{color:var(--gold);font-weight:700}
+
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.sum-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;border-left:4px solid var(--accent);transition:transform .15s}
+.sum-card:hover{transform:translateY(-2px)}
+.sum-card.red{border-left-color:var(--red)} .sum-card.gold{border-left-color:var(--gold)} .sum-card.blue{border-left-color:var(--accent2)} .sum-card.purple{border-left-color:var(--purple)}
+.sc-title{font-family:var(--fh);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;color:var(--accent)}
+.sum-card.red .sc-title{color:var(--red)} .sum-card.gold .sc-title{color:var(--gold)} .sum-card.blue .sc-title{color:var(--accent2)} .sum-card.purple .sc-title{color:var(--purple)}
+.sum-card p{font-size:.84rem;color:var(--muted);margin:0}
+.fd-bottom-bar{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:20px}
+.fd-author,.fd-read-time{font-size:11px;color:var(--muted);letter-spacing:.04em}
+.fd-author strong{color:var(--accent);font-weight:600}
+.fd-cat-pills{display:flex;gap:6px;flex-wrap:wrap}
+.fd-pill{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:100px;border:1px solid}
+.fd-pill.a{color:var(--accent2);border-color:rgba(37,99,235,.35);background:rgba(37,99,235,.06)}
+.fd-pill.b{color:var(--gold);border-color:rgba(183,121,31,.35);background:rgba(183,121,31,.07)}
+.fd-pill.c{color:var(--accent);border-color:rgba(0,163,124,.35);background:rgba(0,163,124,.06)}
+.footer{text-align:center;margin-top:40px;font-size:.72rem;color:var(--muted);letter-spacing:.05em}
+.footer span{color:var(--accent)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:var(--ink);color:#fff;font-size:.82rem;padding:10px 18px;border-radius:100px;opacity:0;transition:all .3s;pointer-events:none;z-index:20}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:600px){.wrap{padding:28px 16px 60px}.summary-grid{grid-template-columns:1fr}.upd-tag{margin-left:0}.panel{position:static}.panel-lbl{min-width:100%}.fd-bottom-bar{flex-direction:column;align-items:flex-start}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"></div>
+  <header class="header">
+    <h1>This Week in AI — Anthropic Sets Its IPO Terms</h1>
+    <p class="sub">ANTHROPIC IPO · GEMINI 4 HYDROGEN &amp; CARBON · AI AGENTS IN CYBERATTACKS · ADOBE MAX</p>
+    <div class="dateline">Week of Nov 9 – 16, 2026 | Weekly Roundup</div>
+  </header>
+  <hr class="divider accent">
+  <p class="intro">The money and the models moved together this week. <strong>Anthropic</strong> filed IPO terms and told investors it has crossed its own AI-accelerated research threshold, while <strong>Google</strong> put Gemini 4 into Search and opened its strongest model to paying users. Meanwhile the <strong>FBI and Amazon</strong> documented criminals running AI agent frameworks at scale. Below: 16 updates, with vendor claims labelled.</p>
+
+  <div class="panel" id="panel">
+    <div class="panel-row">
+      <label class="search"><input id="q" type="search" placeholder="Search stories, companies, numbers..." aria-label="Search stories"><kbd>/</kbd></label>
+      <button class="btn primary" id="shuffle" title="Jump to a random story">Surprise me</button>
+      <button class="btn" id="reset">Reset</button>
+    </div>
+    <div class="panel-row">
+      <span class="panel-lbl">Group by</span>
+      <div class="seg" id="groupSeg">
+        <button data-g="section" class="on">Section</button>
+        <button data-g="maker">Company</button>
+        <button data-g="kind">Status</button>
+        <button data-g="none">One list</button>
+      </div>
+    </div>
+    <div class="panel-row" id="secChips"><span class="panel-lbl">Section</span></div>
+    <div class="panel-row" id="kindChips"><span class="panel-lbl">Status</span></div>
+    <div class="status">
+      <span id="countTxt">Showing 16 of 16</span>
+      <div class="progress" title="Your reading progress"><i id="bar"></i></div>
+      <span id="readTxt">0 of 16 read</span>
+    </div>
+  </div>
+
+  <div id="board"></div>
+
+  <hr class="divider">
+  <div class="section-label">The Week in a Nutshell</div>
+  <div class="summary-grid">
+    <div class="sum-card"><div class="sc-title">A Frontier Lab Goes Public</div><p>Anthropic's $70–$78 range and $26B partner placement set up the first IPO of a frontier AI lab, pricing Nov 18.</p></div>
+    <div class="sum-card purple"><div class="sc-title">Safety Thresholds in Filings</div><p>Anthropic told investors it has met its own AI-accelerated research trigger, based on expectations rather than observation.</p></div>
+    <div class="sum-card blue"><div class="sc-title">Gemini 4 Reaches Everyone</div><p>Hydrogen now runs Search's AI features globally; Carbon opened to paying users at intro pricing until Nov 30.</p></div>
+    <div class="sum-card red"><div class="sc-title">Agents Attack at Speed</div><p>FBI and Amazon describe ARTEX campaigns reaching privileged access in hours. Basic hygiene remains the main defence.</p></div>
+    <div class="sum-card gold"><div class="sc-title">Agents and Money</div><p>OpenAI lets agents pay with per-purchase approval, while United bars unauthorized agents from booking.</p></div>
+    <div class="sum-card"><div class="sc-title">India in the Stack</div><p>Local OpenAI inference and a 10-country supply-chain declaration deepen India's role in AI infrastructure.</p></div>
+  </div>
+  <div class="fd-bottom-bar">
+    <div class="fd-author">By &nbsp;<strong>The Editorial Team</strong></div>
+    <div class="fd-cat-pills"><span class="fd-pill a">AI</span><span class="fd-pill b">Weekly</span><span class="fd-pill c">Digest</span></div>
+    <div class="fd-read-time">~8 min read</div>
+  </div>
+  <div class="footer"><span>Weekly AI Update</span> · &copy; 2026</div>
+</div>
+<div class="toast" id="toast"></div>
+
+<template id="realityTpl">
+  <div class="reality">
+    <div class="reality-head">Reality Check — The Anthropic IPO</div>
+    <ul>
+      <li><span class="lbl">Confirmed:</span> roadshow launch on Nov 10 (Anthropic newsroom); <strong>$70–$78 range, 825M shares, ticker ANT</strong>, and the <strong>$26B private placement</strong> across seven named partners, consistent across the filing summary and multiple outlets.</li>
+      <li><span class="lbl">Company-stated:</span> the <strong>RSP threshold determination</strong> comes from Anthropic's own filing and rests on forward-looking judgment, not a measured result. Specific added safeguards are not disclosed.</li>
+      <li><span class="lbl">Sources differ:</span> headline valuation. TechCrunch's fully diluted figure is <strong>up to ~$1.4 trillion</strong>; other outlets using ~13.1B shares outstanding get <strong>~$916B–$1.02T</strong>.</li>
+      <li><span class="lbl">Unknown:</span> the final price (set the evening before trading and can land outside the range) and first-day performance.</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+const SECTIONS=[
+ {id:'headline',name:'The Headline — Anthropic Heads to Nasdaq',short:'Headline',c:'a'},
+ {id:'models',name:'Frontier Models',short:'Models',c:'b'},
+ {id:'cyber',name:'Cybersecurity AI — Agents on Offence',short:'Cyber',c:'r'},
+ {id:'agents',name:'Agents, Workspace & Memory',short:'Agents',c:'p'},
+ {id:'creative',name:'Creative, Video & Image',short:'Creative',c:'g'},
+ {id:'biz',name:'Business, Policy & India',short:'Business & India',c:'b'}
+];
+const KINDS=[
+ {id:'launch',name:'Shipped & Available',c:'a'},
+ {id:'beta',name:'Beta & Preview',c:'p'},
+ {id:'filing',name:'Filings & Disclosures',c:'g'},
+ {id:'research',name:'Research & Alerts',c:'r'},
+ {id:'policy',name:'Policy & Regulation',c:'b'}
+];
+const ITEMS=[
+ {n:'01',sec:'headline',kind:'filing',maker:'Anthropic',color:'green',tag:'Filed',title:'Anthropic Files IPO Price Range and Launches Roadshow',meta:'Anthropic · Nasdaq ticker "ANT"',
+  body:'An amended S-1 offers <span class="hl-green">825 million Class A shares at $70–$78</span>, with pricing planned for Nov 18 and trading from Nov 19. Seven chip and cloud partners (AMD, Broadcom, Google, Micron, Microsoft, Nvidia, TSMC) agreed to buy <span class="hl-green">$26 billion of non-voting shares</span> in a concurrent private placement; TSMC\'s board separately approved up to $500M in Anthropic stock and up to $500M in OpenAI preferred shares. The roadshow launched Nov 10. Why it matters: it would be the first listing of a frontier AI lab, putting its finances and risk disclosures on the public record.'},
+ {n:'02',sec:'headline',kind:'filing',maker:'Anthropic',color:'purple',tag:'Disclosure',title:'Anthropic Says It Has Met Its AI R&D Safety Threshold',meta:'Anthropic · Responsible Scaling Policy',
+  body:'A week after saying it "may imminently meet" the threshold, the amended prospectus says Anthropic <span class="hl-purple">has met the AI-accelerated research trigger</span> in its scaling policy, defined as a doubling in the pace of AI progress driven substantially by automated research. The filing bases this on expected future models and overall progress rather than observed current-model behaviour, and does not say which added safeguards apply. Days earlier, evaluator METR said Anthropic\'s August public risk report understated the case that the threshold might already have been crossed.'},
+ {n:'03',sec:'models',kind:'launch',maker:'Google',color:'blue',tag:'New',title:'Gemini 4 Hydrogen Replaces 3.8 Flash Across Google',meta:'Google · Released Nov 12 · API, Gemini app, Search, Sheets',
+  body:'Google\'s new fast, low-cost model is now the default behind <span class="hl-blue">AI features in Google Search for all users worldwide</span>. API pricing is a flat <span class="hl-blue">$1.50 input / $7.50 output per million tokens</span> across a 1M-token context. Vendor-reported: 2.5x faster than 3.8 Flash at the default setting, Terminal-Bench 4.1 up from 18.2% to 57%, and more than 5x fewer fabricated claims. A new Orchestrator in Antigravity switches between Hydrogen and Carbon in one session.'},
+ {n:'04',sec:'models',kind:'launch',maker:'Google',color:'green',tag:'Now Available',title:'Gemini 4 Carbon Opens to Paying Users',meta:'Google · Released Nov 10 · Paid API tier, Google AI Ultra',
+  body:'Carbon, previously limited to vetted cyber defenders in the Fairwind program, is now available to paying developers, enterprises and Ultra subscribers. Introductory API price is <span class="hl-green">$2 / $10 per million tokens until Nov 30</span>, then $4 / $20. Google also previewed <span class="hl-green">/swarm</span> in Antigravity, which turns one prompt into a tracked team of agents. The stronger cyber variant stays behind Fairwind access. Benchmark leads on CursorBench and AutomationBench are vendor-reported.'},
+ {n:'05',sec:'cyber',kind:'research',maker:'FBI',color:'red',tag:'Alert',title:'FBI Warns on ARTEX Agent Hacking Framework',meta:'FBI · FLASH alert, Nov 13',
+  body:'ARTEX is an open-source, LLM-driven pentesting tool that turns plain-language goals into attack commands. The FBI says criminals have used it <span class="hl-red">since at least August 2026</span>, with some intrusions reaching privileged access <span class="hl-red">in under three hours</span>. Researchers counted over 1,600 exposed ARTEX consoles. The original repo was pulled on Oct 8, but forks and a commercial version remain. Attacker setups most often used low-cost DeepSeek Flash models. The alert\'s main advice: inventory peripheral apps and rotate exposed secrets.'},
+ {n:'06',sec:'cyber',kind:'research',maker:'Amazon',color:'red',tag:'Research',title:'Amazon Captures Attacker Agents\' Own Campaign Logs',meta:'Amazon Threat Intelligence · Nov 13',
+  body:'Decoy sensors posing as LLM APIs collected ARTEX agents\' working memory from <span class="hl-red">Oct 3 to Nov 5</span>. One campaign stole AI-provider API keys and used them to pay for the compute that hunted for more keys. Another tried real-time deepfakes against two crypto exchanges\' identity checks; <span class="hl-red">the vendor rejected every recorded attempt</span>. Amazon links the activity, with moderate confidence, to Chinese-nexus groups and says it cannot verify the outcomes the agents reported. No new techniques were seen, only faster and more persistent use of old ones.'},
+ {n:'07',sec:'cyber',kind:'research',maker:'Google',color:'green',tag:'Research',title:'AlphaProof Code Machine-Checks Signal\'s Crypto',meta:'Google DeepMind · Nov 10 · Artifacts open-sourced',
+  body:'Agents powered by Gemini Carbon produced Lean proofs that <span class="hl-green">Signal\'s compiled cryptographic code</span> meets human-reviewed security specifications, including protection before and after a temporary device compromise. DeepMind says the work took <span class="hl-green">four weeks</span>, and that the system correctly flagged two reintroduced historical bugs. The proofs depend on stated assumptions and do not cover side channels or the rest of the Signal app. Signal\'s CTO endorsed the approach.'},
+ {n:'08',sec:'agents',kind:'beta',maker:'Anthropic',color:'blue',tag:'Beta',title:'Claude Meetings Joins Google Meet Calls',meta:'Anthropic · Team & Enterprise plans · Google Meet only',
+  body:'Claude can now join a call as a <span class="hl-blue">visible participant</span>, answering questions, drafting plans and building timelines or follow-up material live. Notes and artifacts land in claude.ai afterwards. Other plans and meeting platforms are planned but undated. Reports differ on whether the Nov 10 announcement was a live beta or "coming soon"; coverage also leaves open how call data is retained.'},
+ {n:'09',sec:'agents',kind:'launch',maker:'OpenAI',color:'gold',tag:'Rolling Out',title:'ChatGPT Wallet Lets Agents Pay',meta:'OpenAI · With Amex, Mastercard, Visa · US Pro users, 18+',
+  body:'OpenAI\'s agents can now complete purchases using a <span class="hl-gold">network payment token</span> instead of the card number, after the user approves each purchase and passes a security check. It starts with US ChatGPT Pro subscribers holding eligible US-issued cards; OpenAI says rewards and dispute protections carry over. Why it matters: it is a first large-scale test of whether people will let agents spend money.'},
+ {n:'10',sec:'agents',kind:'policy',maker:'United Airlines',color:'red',tag:'Policy',title:'United Airlines Blocks Unauthorized AI Agents',meta:'United Airlines · Nov 12',
+  body:'In the opposite direction, United said it will <span class="hl-red">block third-party AI agents from booking or managing tickets</span> without authorization, on its site and through agencies. It cited exposed credentials, unintended purchases and federal check-in rules. A Nov 11 contract-of-carriage change lets it cancel agent-made bookings. Agents can still display its fares.'},
+ {n:'11',sec:'creative',kind:'beta',maker:'Adobe',color:'purple',tag:'Beta',title:'Adobe MAX: Firefly Becomes an Agent-Led Studio',meta:'Adobe · Nov 10 · With Google partnership',
+  body:'Adobe\'s Creative Agent gains <span class="hl-purple">Plan Mode</span> (approve the plan before it runs), a model selector, saved brand preferences and always-on background agents (preview). New Firefly Design and Firefly Graph are in beta; Firefly Builder, a no-code app and site prototyper, is in private beta. Edit Text, Retouch, Relight and Quick Actions are generally available now. Separately, Adobe and Google announced plans to bring <span class="hl-purple">Acrobat into Drive and Gmail</span> and to co-develop near-real-time prompt editing for Photoshop with DeepMind; no dates or pricing given.'},
+ {n:'12',sec:'creative',kind:'launch',maker:'MiniMax',color:'gold',tag:'Open Weights',title:'MiniMax H3-Image Ships Open Weights for 4K',meta:'MiniMax · Nov 10 · Hailuo AI, API, Hugging Face',
+  body:'An open-weight image generation and editing model producing <span class="hl-gold">native 4K output with up to 16 reference images</span>. Speed claims vary by source (roughly 10–20 seconds per image on MiniMax\'s service; one user reported 56 seconds on a single consumer GPU). MiniMax has published no quality metrics, and licence terms, including reported regional and commercial-use restrictions, should be checked before use.'},
+ {n:'13',sec:'biz',kind:'filing',maker:'Nvidia',color:'red',tag:'Leadership',title:'Jensen Huang Resigns as Nvidia CEO',meta:'Nvidia · SEC 8-K, Nov 12',
+  body:'Nvidia\'s board accepted Huang\'s resignation as president, CEO and director <span class="hl-red">effective Nov 11</span>. CFO <span class="hl-red">Colette Kress is interim CEO</span> while the board searches, and long-time director Harvey Jones becomes chair. The exit follows a board inquiry into whether Huang was targeted by a foreign intelligence effort, and has drawn congressional questions about chip-export oversight. Nvidia reports earnings this week.'},
+ {n:'14',sec:'biz',kind:'launch',maker:'OpenAI',color:'blue',tag:'New',title:'OpenAI Adds In-Country Inference for India',meta:'OpenAI · India · Nov 12',
+  body:'Eligible API customers can now have <span class="hl-blue">GPT-6 Luna requests processed and stored within India</span> via the Responses and Chat Completions APIs, by creating a project with India selected for storage and processing. Previously only storage was local. The change targets banks and other regulated firms with data-localisation requirements. Text workloads only for now.'},
+ {n:'15',sec:'biz',kind:'policy',maker:'Governments',color:'green',tag:'Signed',title:'India Signs AI Supply-Chain Declaration',meta:'India + 9 partners · Pax Silica · Nov 15',
+  body:'India joined the US, Australia, Israel, Japan, South Korea, Qatar, Singapore, the UAE and the UK in the <span class="hl-green">San Francisco Declaration</span> on securing AI and semiconductor supply chains. It sets up <span class="hl-green">five working groups</span> covering policy, sector adoption, supply-chain cooperation, security hubs and resilience. No funding was attached to this declaration itself.'},
+ {n:'16',sec:'biz',kind:'policy',maker:'Governments',color:'gold',tag:'Reported',title:'Regulators and Courts Move on Frontier AI',meta:'Australia · New York · California',
+  body:'Australia\'s PM said the country plans an <span class="hl-gold">AI safety regulator</span> with fining powers and mandatory incident reporting, with legislation expected next year (reported). New York\'s RAISE Act obligations for frontier developers start <span class="hl-gold">Jan 1, 2027</span>; one report says registration opened this week, which state pages did not yet confirm. In San Francisco, advocacy groups sued Anthropic, Google, Meta, OpenAI and SpaceX\'s AI unit seeking a freeze on models beyond current capability; no court has ruled.'}
+];
+
+const state={group:'section',secs:new Set(),kinds:new Set(),q:'',read:new Set()};
+const $=s=>document.querySelector(s);
+const secOf=id=>SECTIONS.find(s=>s.id===id), kindOf=id=>KINDS.find(k=>k.id===id);
+
+function buildChips(){
+  const mk=(wrap,list,set,key)=>list.forEach(x=>{
+    const n=ITEMS.filter(i=>i[key]===x.id).length;
+    const b=document.createElement('span');b.className='chip '+x.c;b.tabIndex=0;b.setAttribute('role','button');
+    b.innerHTML=(x.short||x.name)+'<span class="n">'+n+'</span>';
+    const t=()=>{set.has(x.id)?set.delete(x.id):set.add(x.id);b.classList.toggle('on');render();};
+    b.onclick=t;b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}};
+    b.dataset.id=x.id;wrap.appendChild(b);
+  });
+  mk($('#secChips'),SECTIONS,state.secs,'sec');
+  mk($('#kindChips'),KINDS,state.kinds,'kind');
+}
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function hi(html){
+  if(!state.q)return html;
+  const re=new RegExp('('+esc(state.q)+')','gi');
+  return html.split(/(<[^>]+>)/).map(p=>p.startsWith('<')?p:p.replace(re,'<mark>$1</mark>')).join('');
+}
+function match(i){
+  if(state.secs.size&&!state.secs.has(i.sec))return false;
+  if(state.kinds.size&&!state.kinds.has(i.kind))return false;
+  if(state.q){const t=(i.title+' '+i.meta+' '+i.body+' '+i.maker+' '+i.tag).replace(/<[^>]+>/g,'').toLowerCase();if(!t.includes(state.q.toLowerCase()))return false;}
+  return true;
+}
+function card(i){
+  const k=kindOf(i.kind);
+  const d=document.createElement('div');
+  d.className='upd-card '+i.color+(state.read.has(i.n)?' read':'');d.id='c'+i.n;
+  d.innerHTML='<div class="upd-head"><span class="upd-num">'+i.n+'</span><span class="upd-title">'+hi(i.title)+'</span><span class="upd-tag">'+i.tag+'</span></div>'+
+   '<p><span class="maker">'+hi(i.meta)+'</span>'+hi(i.body)+'</p>'+
+   '<div class="card-foot"><span class="mini" data-f="maker">'+i.maker+'</span><span class="mini" data-f="kind">'+k.name+'</span>'+
+   '<button class="readbtn">'+(state.read.has(i.n)?'Read':'Mark as read')+'</button></div>';
+  d.querySelector('.readbtn').onclick=()=>{state.read.has(i.n)?state.read.delete(i.n):state.read.add(i.n);
+    if(state.read.size===ITEMS.length)toast('All 16 read. You are caught up for the week.');render(false);};
+  d.querySelector('[data-f=maker]').onclick=()=>{$('#q').value=i.maker;state.q=i.maker;render();toast('Showing stories mentioning '+i.maker);};
+  d.querySelector('[data-f=kind]').onclick=()=>{state.kinds.clear();state.kinds.add(i.kind);syncChips();render();toast('Filtered to '+k.name);};
+  return d;
+}
+function syncChips(){
+  document.querySelectorAll('#secChips .chip').forEach(c=>c.classList.toggle('on',state.secs.has(c.dataset.id)));
+  document.querySelectorAll('#kindChips .chip').forEach(c=>c.classList.toggle('on',state.kinds.has(c.dataset.id)));
+}
+function render(anim=true){
+  const board=$('#board');board.innerHTML='';
+  const vis=ITEMS.filter(match);
+  $('#countTxt').textContent='Showing '+vis.length+' of '+ITEMS.length;
+  $('#readTxt').textContent=state.read.size+' of '+ITEMS.length+' read';
+  $('#bar').style.width=(state.read.size/ITEMS.length*100)+'%';
+  if(!vis.length){board.innerHTML='<div class="empty"><b>Nothing matches that combination.</b>Try removing a filter, or hit Reset to see all 16 stories.</div>';return;}
+  let groups=[];
+  if(state.group==='section')groups=SECTIONS.map(s=>({name:s.name,items:vis.filter(i=>i.sec===s.id),reality:s.id==='headline'}));
+  else if(state.group==='kind')groups=KINDS.map(k=>({name:k.name,items:vis.filter(i=>i.kind===k.id)}));
+  else if(state.group==='maker'){const ms=[...new Set(vis.map(i=>i.maker))].sort((a,b)=>vis.filter(i=>i.maker===b).length-vis.filter(i=>i.maker===a).length||a.localeCompare(b));
+    groups=ms.map(m=>({name:m,items:vis.filter(i=>i.maker===m)}));}
+  else groups=[{name:'All stories',items:vis}];
+  groups.filter(g=>g.items.length).forEach(g=>{
+    const h=document.createElement('h2');h.innerHTML=g.name.replace(/&/g,'&amp;')+' <span class="cnt">'+g.items.length+'</span>';board.appendChild(h);
+    const grid=document.createElement('div');grid.className='upd-grid';
+    g.items.forEach((i,ix)=>{const c=card(i);if(anim)c.style.animationDelay=(ix*40)+'ms';else c.style.animation='none';grid.appendChild(c);});
+    board.appendChild(grid);
+    if(g.reality)board.appendChild($('#realityTpl').content.cloneNode(true));
+  });
+  if(state.group!=='section'&&vis.some(i=>i.sec==='headline')){board.appendChild($('#realityTpl').content.cloneNode(true));}
+}
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200);}
+
+document.querySelectorAll('#groupSeg button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#groupSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');state.group=b.dataset.g;render();});
+$('#q').addEventListener('input',e=>{state.q=e.target.value.trim();render(false);});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus();}});
+$('#reset').onclick=()=>{state.secs.clear();state.kinds.clear();state.q='';$('#q').value='';syncChips();render();toast('All 16 stories are back');};
+$('#shuffle').onclick=()=>{
+  let pool=ITEMS.filter(match).filter(i=>!state.read.has(i.n));
+  if(!pool.length){state.secs.clear();state.kinds.clear();state.q='';$('#q').value='';syncChips();render();pool=ITEMS.filter(i=>!state.read.has(i.n));}
+  if(!pool.length){toast('You have read everything. Nice work.');return;}
+  const pick=pool[Math.floor(Math.random()*pool.length)];
+  const el=document.getElementById('c'+pick.n);
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  el.classList.remove('spot');void el.offsetWidth;el.classList.add('spot');
+  toast('Story '+pick.n+': '+pick.title);
+};
+buildChips();render();
+</script>
+</body>
+</html>
