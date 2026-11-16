@@ -3,22 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>shajis.com</title>
+<meta name="robots" content="index, follow">
+<title>This Week in AI · Weekly AI News Roundup | shajis.com</title>
+<meta name="description" content="This Week in AI: a weekly, fact-checked roundup of AI news covering frontier models, cybersecurity, agents, creative tools, business and India. New issue every Monday.">
+<link rel="canonical" href="https://shajis.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="shajis.com">
+<meta property="og:title" content="This Week in AI · Weekly AI News Roundup">
+<meta property="og:description" content="A weekly, fact-checked roundup of the AI news that matters. New issue every Monday.">
+<meta property="og:url" content="https://shajis.com/">
+<meta name="twitter:card" content="summary">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
-    background:#0b1020;color:#eaf0ff;
-    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif}
-  h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:600;letter-spacing:-.02em}
-  p{margin-top:12px;color:#9fb0d6;font-size:1.1rem}
+:root{
+  --bg:#f6f8fb;--surface:#fff;--surface2:#eef2f8;--border:#dfe5ef;
+  --accent:#00a37c;--accent2:#2563eb;--gold:#b7791f;--red:#d93848;--purple:#7c4ddb;
+  --text:#1c2638;--muted:#5f6d84;--ink:#0d1524;
+  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{color:var(--text);font-family:var(--fb);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.topbar{height:4px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--gold),var(--red),var(--purple))}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{font-family:var(--fh);font-weight:800;font-size:1.15rem;color:var(--ink);letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+nav .links{display:flex;gap:18px;font-size:.85rem;font-weight:500;color:var(--muted)}
+nav .links a:hover{color:var(--accent2)}
+
+.hero{padding:56px 0 36px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,163,124,.08);border:1px solid rgba(0,163,124,.3);border-radius:100px;padding:5px 14px;font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-family:var(--fh);font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin:18px 0 14px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:1.05rem}
+.stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px}
+.stat b{display:block;font-family:var(--fh);font-size:1.6rem;color:var(--ink);line-height:1}
+.stat span{font-size:.75rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+.label{font-family:var(--fh);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:44px 0 14px;display:flex;align-items:center;gap:10px}
+.label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Featured issue */
+.feature{display:grid;grid-template-columns:1.25fr 1fr;background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(20,40,80,.08);transition:transform .2s,box-shadow .2s}
+.feature:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(20,40,80,.12)}
+.feature .main{padding:32px 34px}
+.feature .date{font-size:.75rem;font-weight:600;color:var(--accent2);letter-spacing:.08em;text-transform:uppercase}
+.feature h2{font-family:var(--fh);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.15;color:var(--ink);letter-spacing:-.02em;margin:10px 0 12px}
+.feature .intro{color:var(--text);font-size:.95rem;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.tag{font-size:.64rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:100px;border:1px solid var(--border);color:var(--muted);background:var(--surface2)}
+.tag:nth-child(5n+1){color:var(--accent);border-color:rgba(0,163,124,.3);background:rgba(0,163,124,.06)}
+.tag:nth-child(5n+2){color:var(--accent2);border-color:rgba(37,99,235,.3);background:rgba(37,99,235,.06)}
+.tag:nth-child(5n+3){color:var(--red);border-color:rgba(217,56,72,.3);background:rgba(217,56,72,.06)}
+.tag:nth-child(5n+4){color:var(--purple);border-color:rgba(124,77,219,.3);background:rgba(124,77,219,.06)}
+.tag:nth-child(5n+5){color:var(--gold);border-color:rgba(183,121,31,.3);background:rgba(183,121,31,.07)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;font-family:var(--fh);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:12px 20px;border-radius:100px;transition:background .15s,gap .15s}
+.cta:hover{background:var(--accent2);gap:14px}
+.meta{display:inline-block;margin-left:14px;font-size:.8rem;color:var(--muted)}
+.feature .side{background:linear-gradient(160deg,#eef4ff,#effaf6);padding:32px 30px;border-left:1px solid var(--border)}
+.side h3{font-family:var(--fh);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.side ol{list-style:none;counter-reset:h;display:flex;flex-direction:column;gap:14px}
+.side li{counter-increment:h;display:grid;grid-template-columns:34px 1fr;gap:10px;font-size:.9rem;color:var(--text)}
+.side li::before{content:counter(h,decimal-leading-zero);font-family:var(--fh);font-weight:800;font-size:1.05rem;color:var(--accent2)}
+.side li:nth-child(2)::before{color:var(--accent)}
+.side li:nth-child(3)::before{color:var(--red)}
+
+/* Archive */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.search{flex:1;min-width:200px;display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:8px 16px}
+.search input{border:none;outline:none;background:transparent;width:100%;font-family:var(--fb);font-size:.92rem;color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.issue{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px;border-top:4px solid var(--accent);transition:transform .15s,box-shadow .2s;display:flex;flex-direction:column;gap:8px;animation:pop .35s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.issue:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(20,40,80,.09)}
+.issue:nth-child(5n+2){border-top-color:var(--accent2)}
+.issue:nth-child(5n+3){border-top-color:var(--purple)}
+.issue:nth-child(5n+4){border-top-color:var(--gold)}
+.issue:nth-child(5n+5){border-top-color:var(--red)}
+.issue .d{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.issue h4{font-family:var(--fh);font-size:1.05rem;line-height:1.25;color:var(--ink)}
+.issue p{font-size:.85rem;color:var(--muted)}
+.issue .more{margin-top:auto;font-size:.78rem;font-weight:600;color:var(--accent2)}
+.empty{text-align:center;padding:34px 20px;border:1px dashed var(--border);border-radius:14px;color:var(--muted);background:var(--surface)}
+.empty b{display:block;font-family:var(--fh);color:var(--ink);margin-bottom:4px}
+
+.about{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.about div{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
+.about b{display:block;font-family:var(--fh);font-size:.9rem;color:var(--ink);margin-bottom:6px}
+.about p{font-size:.86rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:.75rem;letter-spacing:.05em;padding:48px 0 40px}
+footer span{color:var(--accent)}
+@media(max-width:760px){.wrap{padding:0 16px}.feature{grid-template-columns:1fr}.feature .side{border-left:none;border-top:1px solid var(--border)}.feature .main,.feature .side{padding:24px 22px}.about{grid-template-columns:1fr}.hero{padding:36px 0 24px}nav .links{display:none}.meta{display:block;margin:12px 0 0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-  <main>
-    <h1>shajis.com</h1>
-    <p>Something new is coming soon.</p>
-  </main>
+<div class="topbar"></div>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="./">shajis<span>.</span>com</a>
+    <div class="links"><a href="#latest">Latest</a><a href="#archive">Archive</a><a href="#about">About</a></div>
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">New issue every Monday</span>
+    <h1>This Week in <em>AI</em></h1>
+    <p>A short, fact-checked roundup of the week's AI news: models, security, agents, creative tools, business and India. Vendor claims are labelled and open questions are called out.</p>
+    <div class="stats">
+      <div class="stat"><b id="sIssues">–</b><span>Issues</span></div>
+      <div class="stat"><b id="sStories">–</b><span>Stories covered</span></div>
+      <div class="stat"><b id="sRead">–</b><span>Min read, latest</span></div>
+    </div>
+  </section>
+
+  <div class="label" id="latest">Latest issue</div>
+  <div id="feature"></div>
+
+  <div class="label" id="archive">All issues</div>
+  <div class="tools">
+    <label class="search"><input id="q" type="search" placeholder="Search past issues by company, topic or keyword..." aria-label="Search issues"></label>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <div class="label" id="about">How it works</div>
+  <div class="about">
+    <div><b>Primary sources first</b><p>Company announcements, filings, official alerts and papers come before aggregators. Surprising claims get a second source.</p></div>
+    <div><b>Claims are labelled</b><p>Vendor-reported benchmarks, betas, previews and unconfirmed reports are marked as such, and conflicts are noted.</p></div>
+    <div><b>Built to skim</b><p>Each issue lets you group and filter stories by section, company or status, search them, and track what you have read.</p></div>
+  </div>
+
+  <footer><span>Weekly AI Update</span> · &copy; <span id="yr">2026</span> · shajis.com</footer>
+</div>
+
+<script src="ai-newsletter/issues.js"></script>
+<script>
+(function(){
+  var issues=(window.ISSUES||[]).slice().sort(function(a,b){return b.date.localeCompare(a.date);});
+  var $=function(id){return document.getElementById(id);};
+  function e(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  $('yr').textContent=new Date().getFullYear();
+  $('sIssues').textContent=issues.length;
+  $('sStories').textContent=issues.reduce(function(t,i){return t+(i.stories||0);},0);
+  $('sRead').textContent=issues.length?('~'+issues[0].readMin):'–';
+
+  if(!issues.length){
+    $('feature').innerHTML='<div class="empty"><b>The first issue is on its way.</b>Check back on Monday.</div>';
+    return;
+  }
+  var L=issues[0];
+  $('feature').innerHTML=
+    '<a class="feature" href="'+e(L.url)+'">'+
+      '<div class="main"><div class="date">Week of '+e(L.range)+'</div>'+
+      '<h2>'+e(L.title)+'</h2><p class="intro">'+e(L.intro)+'</p>'+
+      '<div class="tags">'+L.topics.map(function(t){return '<span class="tag">'+e(t)+'</span>';}).join('')+'</div>'+
+      '<span class="cta">Read the issue <span aria-hidden="true">&rarr;</span></span>'+
+      '<span class="meta">'+L.stories+' stories · ~'+L.readMin+' min read</span></div>'+
+      '<div class="side"><h3>Top stories</h3><ol>'+L.highlights.map(function(h){return '<li>'+e(h)+'</li>';}).join('')+'</ol></div>'+
+    '</a>';
+
+  function render(q){
+    q=(q||'').toLowerCase().trim();
+    var list=issues.filter(function(i){
+      if(!q)return true;
+      return (i.title+' '+i.range+' '+i.intro+' '+i.topics.join(' ')+' '+i.highlights.join(' ')).toLowerCase().indexOf(q)>-1;
+    });
+    if(!list.length){$('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><b>No issues match that search.</b>Try a company name like Google or Anthropic.</div>';return;}
+    $('grid').innerHTML=list.map(function(i,ix){
+      return '<a class="issue" style="animation-delay:'+(ix*40)+'ms" href="'+e(i.url)+'">'+
+        '<span class="d">'+e(i.range)+(ix===0&&!q?' · Latest':'')+'</span>'+
+        '<h4>'+e(i.title)+'</h4><p>'+e(i.topics.join(' · '))+'</p>'+
+        '<span class="more">'+i.stories+' stories · ~'+i.readMin+' min &rarr;</span></a>';
+    }).join('');
+  }
+  $('q').addEventListener('input',function(ev){render(ev.target.value);});
+  render('');
+})();
+</script>
 </body>
 </html>
